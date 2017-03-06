@@ -12,15 +12,21 @@ import { StatisticReviewComponent } from "./components/reviews/statistic/statist
 import { EventsComponent } from "./components/events/events.component";
 import { Auth } from "./services/auth";
 
+import { MapBoxModule }  from 'angular2-mapbox/core';
+
+import { MapService } from './services/map.service';
+
 @NgModule({
     imports: [
         BrowserModule,
         NgSemanticModule,
-        routing
+        routing,
+        MapBoxModule.forRoot("pk.eyJ1Ijoic3dlZXR5bWVvdyIsImEiOiJjaXoxdHM4aWowNHI2MnFxZjZtbmw4cDJ4In0.1140mL1gVeMEdPvgmOOG0g")
     ],
     providers: [
         APP_ROUTER_PROVIDERS,
-        Auth
+        Auth,
+        MapService
     ],
     declarations: [
         AppComponent,

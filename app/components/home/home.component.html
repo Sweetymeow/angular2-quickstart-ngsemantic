@@ -1,4 +1,11 @@
-<button smDirTooltip="Tooltip text" smDirPosition="bottom center" class="ui button positive" (click)="modal.show({transition: 'fly down'})">Show modal window</button>
+<button smDirTooltip="Tooltip text"
+  smDirPosition="bottom center"
+  class="ui button positive" (click)="modal.show({transition: 'fly down'})">
+  Show modal window
+</button>
+
+<!-- <mapbox [center]="[-5.646973, 52.087483]"></mapbox> -->
+<div id="map"></div>
 
 <sm-modal #modal title="Hello">
     <div class="action">
