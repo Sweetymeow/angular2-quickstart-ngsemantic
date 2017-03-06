@@ -1,11 +1,45 @@
-<h3>Reviews</h3>
-
-<div class="ui breadcrumb">
-    <a [routerLink]="['/reviews']" class="section">Home</a>
-        <div class="divider"> / </div>
-    <a [routerLink]="['/reviews/add']" class="section">Add</a>
+<h3 class="ui dividing header">Registration Form</h3>
+<div class="ui grid">
+  <div class="column">
+    <div class="ui breadcrumb">
+      <a [routerLink]="['/reviews']" class="section">Home</a>
+      <div class="divider"> / </div>
+      <a [routerLink]="['/reviews/add']" class="section">Add</a>
+    </div>
+  </div>
 </div>
-
-<div class="ui segment">
-    <router-outlet></router-outlet>
+<div class="ui two column stackable grid">
+  <div class="six wide column">
+    <button class="ui button orange" (click)="myPopup.show($event, {position: 'right center'})">Click me</button>
+    <sm-popup #myPopup>
+      <sm-card class="card">
+        <div class="card">
+          <div class="content">
+            <img class="right floated mini ui image" src="/images/avatar/large/elliot.jpg">
+            <div class="header">
+              Elliot Fu
+            </div>
+            <div class="meta">
+              Friends of Veronika
+            </div>
+            <div class="description">
+              Elliot requested permission to view your contact details
+            </div>
+          </div>
+          <div class="extra content">
+            <div class="ui two buttons">
+              <div class="ui basic green button">Add</div>
+              <div class="ui basic red button" (click)="myPopup.hide()" icon="close">Close</div>
+            </div>
+          </div>
+        </div>
+        <!-- <sm-button class="bottom attached fluid primary" (click)="myPopup.hide()" icon="close">Close popup</sm-button> -->
+      </sm-card>
+    </sm-popup>
+  </div>
+  <div class="ten wide column">
+    <div class="ui segment">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>

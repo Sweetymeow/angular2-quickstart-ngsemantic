@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class Auth {
-    loggedIn: boolean = false;
+    loggedIn: boolean = true; // false
 
     login() {
         this.loggedIn = true;
