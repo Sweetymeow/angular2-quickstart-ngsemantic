@@ -9,7 +9,10 @@ import {LngLat, Map} from 'mapbox-gl';
 
 @Component({
     selector: 'my-app',
-    templateUrl: `app/components/app.component.html`
+    templateUrl: `app/components/app.component.html`,
+    styleUrls:[
+      'app/components/app.component.less'
+    ]
 })
 export class AppComponent {
     visible: boolean = false;

@@ -5,7 +5,20 @@
         <a [routerLink]="['/reviews']" class="item">Reviews</a>
         <a [routerLink]="['/events']" class="item">Upcoming Events <div class="ui label orange">protected</div> </a>
     </div>
-    <h2>Angular 2 QUICKSTART and ngSemantic </h2>
+    <div class="ui vertically divided grid">
+      <div class="row">
+        <div class="thirteen wide column">
+          <h2 class="ui inverted"> Next-Gen Network </h2>
+        </div>
+        <div class="two wide column">
+          <button smDirTooltip="Tooltip text"
+            smDirPosition="bottom right"
+            class="ui orange button icon" (click)="modal.show({transition: 'fly down'})">
+            Registration
+          </button>
+        </div>
+      </div>
+    </div>
 
     <router-outlet></router-outlet>
 </div>

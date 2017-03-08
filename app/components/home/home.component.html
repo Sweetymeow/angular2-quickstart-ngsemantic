@@ -1,38 +1,22 @@
-<button smDirTooltip="Tooltip text"
-  smDirPosition="bottom center"
-  class="ui button positive" (click)="modal.show({transition: 'fly down'})">
-  Show modal window
-</button>
-
 <div class="ui statistics">
-  <div class="statistic">
+  <div class="statistic" *ngFor="let kpi of kpis">
     <div class="value">
-      22
+      {{kpi.val}}
     </div>
     <div class="label">
-      Faves
-    </div>
-  </div>
-  <div class="statistic">
-    <div class="value">
-      31,200
-    </div>
-    <div class="label">
-      Views
-    </div>
-  </div>
-  <div class="statistic">
-    <div class="value">
-      22
-    </div>
-    <div class="label">
-      Members
+      {{kpi.name}}
     </div>
   </div>
 </div>
 
 <!-- <mapbox [center]="[-5.646973, 52.087483]"></mapbox> -->
 <div id="map"></div>
+
+<!-- <button smDirTooltip="Tooltip text"
+  smDirPosition="bottom center"
+  class="ui orange button icon" (click)="modal.show({transition: 'fly down'})">
+  Show modal window
+</button>
 
 <sm-modal #modal title="Hello">
     <div class="action">
@@ -45,3 +29,4 @@
         </div>
     </div>
 </sm-modal>
+-->

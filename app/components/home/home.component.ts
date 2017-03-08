@@ -5,6 +5,19 @@ import { MapService } from '../../services/map.service';
 import { Location } from '../../core/location.class';
 import { LngLat, Map } from 'mapbox-gl';
 
+export class kpi {
+  id: number;
+  name: string;
+  val: number;
+}
+
+const KPIS: kpi[] = [
+  { id: 1, name: 'Educational Institution' , val: 1234},
+  { id: 2, name: 'Countries' , val: 110},
+  { id: 3, name: 'Members' , val: 15},
+  { id: 4, name: 'Events' , val: 132 }
+];
+
 @Component({
     selector: 'my-home',
     templateUrl: 'app/components/home/home.component.html',
@@ -13,6 +26,8 @@ import { LngLat, Map } from 'mapbox-gl';
     ]
 })
 export class HomeComponent implements OnInit {
+  title = "Test Title";
+  kpis = KPIS;
 
   constructor(private mapService: MapService){}
 
@@ -30,7 +45,8 @@ export class HomeComponent implements OnInit {
           type: "geojson",
           // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
           // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
-          data: "https://www.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson",
+          // data: "https://www.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson",
+          data: 'app/data/ReturnNetworkData_F2.geojson',
           cluster: true,
           clusterMaxZoom: 14, // Max zoom to cluster points on
           clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
